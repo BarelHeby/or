@@ -5,8 +5,8 @@ import third from "./images/contructions/3.jpg";
 import "./css/carusel.css";
 function Carusel(props) {
   return (
-    <Carousel pause="hover" touch={true} dir="ltr">
-      <Carousel.Item interval={5000}>
+    <Carousel fade pause="hover" touch={true} dir="ltr">
+      <Carousel.Item>
         <div className="d-flex">
           <img
             height="400"
@@ -26,7 +26,7 @@ function Carusel(props) {
           <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
         </Carousel.Caption>
       </Carousel.Item>
-      <Carousel.Item interval={5000}>
+      <Carousel.Item>
         <div className="d-flex">
           <img
             height="400"
@@ -46,7 +46,7 @@ function Carusel(props) {
           <p>נעשה עבודת תיקון ארונות מטבח והחלפת מרצפות</p>
         </Carousel.Caption>
       </Carousel.Item>
-      <Carousel.Item interval={5000}>
+      <Carousel.Item>
         <div className="d-flex">
           <img
             height="400"

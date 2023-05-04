@@ -5,7 +5,6 @@ import Row from "react-bootstrap/Row";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import "./css/Services.css";
-import { ArrowBarLeft, ArrowLeft } from "react-bootstrap-icons";
 function Services() {
   return (
     <div>

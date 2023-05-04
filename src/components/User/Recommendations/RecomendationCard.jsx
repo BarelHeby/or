@@ -1,5 +1,5 @@
 import React from "react";
-import or from "../../images/or.jpg";
+import or from "../../../images/or.jpg";
 import Card from "react-bootstrap/Card";
 import { BsStarFill } from "react-icons/bs";
 function RecomendationCard() {

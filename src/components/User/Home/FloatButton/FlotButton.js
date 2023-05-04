@@ -3,6 +3,7 @@ window.onscroll = function () {
 };
 function scrollFunction() {
   const btn = document.getElementById("up");
+  if (!btn) return;
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
     btn.style.display = "block";
   } else {

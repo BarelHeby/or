@@ -1,10 +1,10 @@
 import React from "react";
-import kitchen from "../../images/projects/kitchen_fix.jpg";
+import kitchen from "../../../images/projects/kitchen_fix.jpg";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import Carousel from "react-bootstrap/Carousel";
 import Image from "react-bootstrap/Image";
-import kitchen_before_fix from "../../images/projects/kitchen.jpg";
+import kitchen_before_fix from "../../../images/projects/kitchen.jpg";
 function ProjectsCards() {
   return (
     <Card className="mb-3">
