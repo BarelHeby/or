@@ -7,7 +7,7 @@ import Or from "../../../images/or.jpg";
 import Image from "react-bootstrap/Image";
 function About() {
   return (
-    <Container className="">
+    <Container className="pe-5 ps-5">
       <h1 className="text-center  ">קצת עלינו</h1>
       <Row className="align-items-center">
         <Col
