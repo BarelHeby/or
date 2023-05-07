@@ -69,31 +69,36 @@ function AddRecomandationForm() {
     successalertBox.current.classList.remove("d-none");
   }
   return (
-    <Form className="p-2 pt-0" onSubmit={addReview}>
-      <h3>הוסף ביקורת</h3>
-      <FormControl className="mb-2" name="name" placeholder="שם" required />
-      <FormControl
-        className="mb-2 "
-        type="textarea"
-        rows={3}
-        placeholder="תוכן הביקורת"
-        name="description"
-        required
-      />
-      <div className="d-flex justify-content-center align-items-center  ">
-        <FormLabel className="mt-1">לא מרוצה</FormLabel>
-        <div className="mb-2 d-flex" key={0} id="btns">
-          {buttons}
+    <div>
+      <Form
+        className="p-2 pt-3  mb-1 mt-1 border rounded bg-light "
+        onSubmit={addReview}
+      >
+        <h3>הוסף ביקורת</h3>
+        <FormControl className="mb-2" name="name" placeholder="שם" required />
+        <FormControl
+          className="mb-2 "
+          type="textarea"
+          rows={3}
+          placeholder="תוכן הביקורת"
+          name="description"
+          required
+        />
+        <div className="d-flex justify-content-center align-items-center  ">
+          <FormLabel className="mt-1">לא מרוצה</FormLabel>
+          <div className="mb-2 d-flex" key={0} id="btns">
+            {buttons}
+          </div>
+          <FormLabel className="mt-1"> מרוצה מאוד</FormLabel>
         </div>
-        <FormLabel className="mt-1"> מרוצה מאוד</FormLabel>
-      </div>
-      <Button type="submit" variant="dark">
-        הוסף ביקורת
-      </Button>
-      <div className="mt-3 d-none " ref={successalertBox}>
+        <Button type="submit" variant="dark">
+          הוסף ביקורת
+        </Button>
+      </Form>
+      <div className="mb-2 d-none" ref={successalertBox}>
         <AlertBox color={alertColor} text={alertText} />
       </div>
-    </Form>
+    </div>
   );
 }
 
