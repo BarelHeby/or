@@ -3,6 +3,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import RecomendationCard from "./RecomendationCard";
+import AddRecomandationForm from "./AddRecomandationForm";
 function Recommendations() {
   const cards = [];
   for (let i = 0; i < 8; i++) {
@@ -12,10 +13,19 @@ function Recommendations() {
       </Col>
     );
   }
+
   return (
-    <Container className="w-75 ">
-      <h1 className="text-center ">ביקורות מלקוחות אמיתיים</h1>
-      <Row className="text-center">{cards}</Row>
+    <Container className="pe-5 ps-5">
+      <h1 className="text-center ">ביקורות</h1>
+      <Row className="align-items-center">
+        <Col xs={12} lg={6}>
+          <AddRecomandationForm />
+        </Col>
+        <Col>
+          <Row className="text-center">{cards}</Row>
+        </Col>
+      </Row>
+      {/* <Row className="text-center">{cards}</Row> */}
     </Container>
   );
 }

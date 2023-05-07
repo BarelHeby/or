@@ -8,7 +8,7 @@ function Projects() {
   const cards = [];
   for (let i = 0; i < 8; i++) {
     cards.push(
-      <Col xs={12} sm={6} md={4} lg={3}>
+      <Col xs={12} sm={6} md={4} lg={3} key={i}>
         <ProjectsCards />
       </Col>
     );

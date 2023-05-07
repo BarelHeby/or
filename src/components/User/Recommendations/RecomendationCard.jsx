@@ -1,17 +1,21 @@
 import React from "react";
-import or from "../../../images/or.jpg";
 import Card from "react-bootstrap/Card";
 import { BsStarFill } from "react-icons/bs";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Container from "react-bootstrap/Container";
 function RecomendationCard() {
   const stars = [];
   for (let i = 0; i < 5; i++) {
     stars.push(
-      <BsStarFill style={{ color: "#ffd500" }} className="fs-5 me-3" key={i} />
+      <Col xs={2}>
+        <BsStarFill style={{ color: "#ffd500" }} className="" key={i} />
+      </Col>
     );
   }
+  // fs-5
   return (
-    <Card className="mb-3">
-      <Card.Img src={or} variant="top" />
+    <Card className="mb-3 ">
       <Card.Body>
         <Card.Title>רונית</Card.Title>
         <Card.Text>
@@ -19,7 +23,11 @@ function RecomendationCard() {
           בלבד.
         </Card.Text>
       </Card.Body>
-      <Card.Footer>{stars}</Card.Footer>
+      <Card.Footer>
+        <Container>
+          <Row className="justify-content-center">{stars}</Row>
+        </Container>
+      </Card.Footer>
     </Card>
   );
 }

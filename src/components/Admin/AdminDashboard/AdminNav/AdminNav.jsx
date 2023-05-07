@@ -2,7 +2,6 @@ import React from "react";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
-// import NavDropdown from "react-bootstrap/NavDropdown";
 import "./css/navbar.css";
 function AdminNav() {
   return (
@@ -23,19 +22,13 @@ function AdminNav() {
             <Nav variant="dark ">
               <Nav.Link
                 className="btn btn-dark text-white m-1 "
-                href="#projects"
+                href="/admin/dashboard/projects"
               >
                 פרויקטים
               </Nav.Link>
-              <Nav.Link className="btn btn-dark text-white m-1" href="#contact">
-                צור קשר
-              </Nav.Link>
-              <Nav.Link className="btn btn-dark text-white m-1" href="#about">
-                קצת עלינו
-              </Nav.Link>
               <Nav.Link
-                className="btn btn-dark text-white m-1"
-                href="#Recommendations"
+                className="btn btn-dark text-white m-1 "
+                href="/admin/dashboard/reviews"
               >
                 ביקורות
               </Nav.Link>

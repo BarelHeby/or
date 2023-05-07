@@ -10,7 +10,7 @@ function AdminLogin(props) {
 
   useEffect(() => {
     if (props.authenticated) {
-      navigate("/Admin/Dashboard");
+      navigate("/Admin/Dashboard/projects");
     }
   }, [props.authenticated]);
   return (

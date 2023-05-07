@@ -42,7 +42,12 @@ function App() {
           />
           <Route
             excact
-            path="/admin/dashboard"
+            path="/admin/dashboard/projects"
+            element={<AdminDashboard authenticated={authenticated} />}
+          />
+          <Route
+            excact
+            path="/admin/dashboard/reviews"
             element={<AdminDashboard authenticated={authenticated} />}
           />
         </Routes>

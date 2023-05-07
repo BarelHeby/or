@@ -1,10 +1,8 @@
-import React, { createElement } from "react";
-import { Button, Col } from "react-bootstrap";
-
+import React from "react";
+import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import FormControl from "react-bootstrap/FormControl";
 import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
 function AddProject() {
   function addPhoto(event) {
     var selectedFile = event.target.files[0];
@@ -16,16 +14,14 @@ function AddProject() {
     col.appendChild(img);
     img.height = 150;
     img.width = 150;
-    // var imgtag = document.getElementById("myimage");
     img.title = selectedFile.name;
 
     reader.onload = function (event) {
       img.src = event.target.result;
     };
-
     reader.readAsDataURL(selectedFile);
     const row = document.getElementById("imageRow");
-    row.appendChild(img);
+    row.append(col);
   }
 
   return (

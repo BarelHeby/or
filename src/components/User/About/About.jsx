@@ -16,7 +16,7 @@ function About() {
           lg={10}
           className="bg-success text-white h-25  mb-3 rounded"
         >
-          <p className="fs-5 text-center mt-3 hei ">
+          <p id="about_text" className=" text-center mt-3 hei ">
             בתדהר אנחנו מתכננים ובונים דירות, משרדים ומרחבי מחיה.
             <br />
             כחברה יזמית ובונה, אנחנו אחראים על כל התהליך ומלווים את לקוחותינו

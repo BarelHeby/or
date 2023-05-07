@@ -13,6 +13,7 @@ function AllProjects() {
         <Col xs={2}>תיאור</Col>
         <Col>תמונות</Col>
         <Col xs={1}>הוסף תמונות</Col>
+        <Col xs={1}>הסר</Col>
       </Row>
       <ProjectRow />
     </Container>
