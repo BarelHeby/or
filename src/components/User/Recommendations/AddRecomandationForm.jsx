@@ -7,6 +7,8 @@ import AlertBox from "../AlertBox/AlertBox";
 import { useRef } from "react";
 function AddRecomandationForm() {
   const [startSelected, setStarsSelected] = useState(0);
+  const [alertText, setAlertText] = useState("");
+  const [alertColor, setAlertColor] = useState("");
   const buttons = [];
   const successalertBox = useRef();
   const failalertBox = useRef();
@@ -54,12 +56,17 @@ function AddRecomandationForm() {
     e.preventDefault();
     const name = e.target.name.value;
     const description = e.target.name.value;
-    // TODO in success add review
-    successalertBox.current.classList.remove("d-none");
-    // TODO in fail add review
-    failalertBox.current.classList.remove("d-none");
+    if (startSelected === 0) {
+      setAlertColor("danger");
+      setAlertText("בחר דירוג");
+      successalertBox.current.classList.remove("d-none");
+      return;
+    }
 
-    // console.log(startSelected);
+    // TODO in success add review
+    setAlertText("נשלח בהצלחה");
+    setAlertColor("success");
+    successalertBox.current.classList.remove("d-none");
   }
   return (
     <Form className="p-2 pt-0" onSubmit={addReview}>
@@ -84,13 +91,7 @@ function AddRecomandationForm() {
         הוסף ביקורת
       </Button>
       <div className="mt-3 d-none " ref={successalertBox}>
-        <AlertBox color={"success"} text={"נשלח בהצלחה"} />
-      </div>
-      <div className="mt-3 d-none " ref={failalertBox}>
-        <AlertBox
-          color={"danger"}
-          text={"תקלה אירעה בעת שליחת הביקורת, נסה שוב מאוחר יותר."}
-        />
+        <AlertBox color={alertColor} text={alertText} />
       </div>
     </Form>
   );
