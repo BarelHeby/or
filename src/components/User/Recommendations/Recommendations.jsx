@@ -18,7 +18,7 @@ function Recommendations() {
     <Container className="pe-5 ps-5">
       <h1 className="text-center ">ביקורות</h1>
       <Row className="align-items-center">
-        <Col xs={12} lg={6}>
+        <Col xs={12} lg={4}>
           <AddRecomandationForm />
         </Col>
         <Col>
