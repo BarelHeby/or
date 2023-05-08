@@ -2,7 +2,7 @@ import React from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import ProjectPhotoCard from "./ProjectPhotoCard";
-import { IoIosAddCircle, IoMdRemoveCircle } from "react-icons/io";
+import { IoIosAddCircle } from "react-icons/io";
 import Button from "react-bootstrap/Button";
 import or from "../../../../../images/or.jpg";
 function ProjectRow() {
