@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import "./app.css";
 import AdminDashboard from "./components/Admin/AdminDashboard/AdminDashboard";
 import AdminLogin from "./components/Admin/AdminLogin/AdminLogin";
+import AdminProjects from "./components/Admin/AdminDashboard/AdminProjects/AdminProjects";
 
 function App() {
   const [authenticated, setauthenticated] = useState(true);
@@ -42,8 +43,13 @@ function App() {
           />
           <Route
             excact
-            path="/admin/dashboard/projects"
+            path="/admin/dashboard"
             element={<AdminDashboard authenticated={authenticated} />}
+          />
+          <Route
+            excact
+            path="/admin/dashboard/projects"
+            element={<AdminProjects authenticated={authenticated} />}
           />
           <Route
             excact

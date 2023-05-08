@@ -9,13 +9,8 @@ function AdminDashboard(props) {
     if (!props.authenticated) {
       navigate("/");
     }
-  }, [props.authenticated]);
-  return (
-    <div>
-      <AdminNav />
-      <AdminProjects />
-    </div>
-  );
+  }, [props.authenticated, navigate]);
+  return <div>dashboard</div>;
 }
 
 export default AdminDashboard;

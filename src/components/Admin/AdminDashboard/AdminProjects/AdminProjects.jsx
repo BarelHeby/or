@@ -4,7 +4,7 @@ import Row from "react-bootstrap/Row";
 import AllProjects from "./AllProjects/AllProjects";
 import AddProject from "./AddProject/AddProject";
 import { useNavigate } from "react-router-dom";
-
+import AdminNav from "../AdminNav/AdminNav";
 function AdminProjects(props) {
   const navigate = useNavigate();
 
@@ -12,14 +12,17 @@ function AdminProjects(props) {
     navigate("/");
   }
   return (
-    <Container fluid className="border text-center">
-      <Row className="mt-3">
-        <AddProject />
-      </Row>
-      <Row className="mt-3">
-        <AllProjects />
-      </Row>
-    </Container>
+    <div>
+      <AdminNav />
+      <Container fluid className="border text-center m-5">
+        <Row className="mt-3">
+          <AddProject />
+        </Row>
+        <Row className="mt-3">
+          <AllProjects />
+        </Row>
+      </Container>
+    </div>
   );
 }
 

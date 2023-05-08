@@ -7,11 +7,11 @@ function AllProjects() {
   return (
     <Container>
       <h1>ניהול פרויקטים</h1>
-      <Row className="  ">
+      <Row className="">
         <Col xs={1}>מזהה</Col>
-        <Col xs={2}>שם הפרויקט</Col>
-        <Col xs={2}>תיאור</Col>
-        <Col>תמונות</Col>
+        <Col xs={1}>שם הפרויקט</Col>
+        <Col xs={1}>תיאור</Col>
+        <Col xs={6}>תמונות</Col>
         <Col xs={1}>הוסף תמונות</Col>
         <Col xs={1}>הסר</Col>
       </Row>

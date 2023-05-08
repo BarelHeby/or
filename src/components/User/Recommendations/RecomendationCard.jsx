@@ -13,7 +13,6 @@ function RecomendationCard() {
       </Col>
     );
   }
-  // fs-5
   return (
     <Card className="mb-3 ">
       <Card.Body>
@@ -22,6 +21,9 @@ function RecomendationCard() {
           אור נתן חווית שירות מעולה, עניינית ורצינית. מטבח חדש נעשה בתוך 3 ימים
           בלבד.
         </Card.Text>
+        <label className="position-absolute top-0 start-0 ms-1 mt-1">
+          24/03/2023
+        </label>
       </Card.Body>
       <Card.Footer>
         <Container>

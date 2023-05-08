@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import { FormControl, FormLabel, FormText } from "react-bootstrap";
+import FormControl from "react-bootstrap/FormControl";
+import FormLabel from "react-bootstrap/FormLabel";
 import { BsStarFill } from "react-icons/bs";
 import AlertBox from "../AlertBox/AlertBox";
 import { useRef } from "react";
@@ -11,13 +12,7 @@ function AddRecomandationForm() {
   const [alertColor, setAlertColor] = useState("");
   const buttons = [];
   const successalertBox = useRef();
-  const failalertBox = useRef();
-  function controlAlert(color, text) {
-    successalertBox.current.setAttribute("color", color);
-    successalertBox.current.setAttribute("text", text);
-    successalertBox.current.classList.remove("d-none");
-    console.log(successalertBox.current);
-  }
+
   for (let i = 0; i < 5; i++) {
     var currentId = "star" + i;
     const star = (
@@ -71,15 +66,15 @@ function AddRecomandationForm() {
   return (
     <div>
       <Form
-        className="p-2 pt-3  mb-1 mt-1 border rounded bg-light "
+        className="p-2 pt-3 mb-1 mt-1 border rounded bg-light "
         onSubmit={addReview}
       >
         <h3>הוסף ביקורת</h3>
         <FormControl className="mb-2" name="name" placeholder="שם" required />
         <FormControl
           className="mb-2 "
-          type="textarea"
-          rows={3}
+          as="textarea"
+          rows={2}
           placeholder="תוכן הביקורת"
           name="description"
           required
@@ -95,7 +90,7 @@ function AddRecomandationForm() {
           הוסף ביקורת
         </Button>
       </Form>
-      <div className="mb-2 d-none" ref={successalertBox}>
+      <div className=" " ref={successalertBox}>
         <AlertBox color={alertColor} text={alertText} />
       </div>
     </div>

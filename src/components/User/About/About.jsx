@@ -12,8 +12,9 @@ function About() {
       <Row className="align-items-center">
         <Col
           xs={12}
-          md={8}
-          lg={10}
+          md={7}
+          lg={9}
+          xl={10}
           className="bg-success text-white h-25  mb-3 rounded"
         >
           <p id="about_text" className=" text-center mt-3 hei ">
@@ -44,8 +45,8 @@ function About() {
             <br />
           </p>
         </Col>
-        <Col className="text-center  me-3 ms-3">
-          <Image alt="or" src={Or} className="rounded-circle " fluid />
+        <Col className="text-center  me-3 ms-3 ">
+          <Image alt="or" src={Or} className="rounded-circle border" fluid />
         </Col>
       </Row>
     </Container>

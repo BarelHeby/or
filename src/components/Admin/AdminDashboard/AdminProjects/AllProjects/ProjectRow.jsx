@@ -17,13 +17,13 @@ function ProjectRow() {
   return (
     <Row className="align-items-center pt-3 border-top pb-3 ">
       <Col xs={1}>#1</Col>
-      <Col xs={2} className="border-end">
+      <Col xs={1} className="border-end">
         תיקון מטבח
       </Col>
-      <Col xs={2} className="border-end">
+      <Col xs={1} className="border-end">
         תיקון מטבח ללא פשרות בחולון
       </Col>
-      <Col className="border-end ">
+      <Col xs={6} className="border-end ">
         <Row className="d-flex justify-content-center">{cards}</Row>
       </Col>
       <Col xs={1} className="border-end ">

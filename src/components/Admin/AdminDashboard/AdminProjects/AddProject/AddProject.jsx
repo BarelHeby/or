@@ -28,8 +28,13 @@ function AddProject() {
     <Container className="w-75 border p-2">
       <h1>הוסף פרויקט</h1>
       <Form>
-        <FormControl placeholder="כותרת" />
-        <FormControl type="textarea" placeholder="תיאור" rows={3} />
+        <FormControl placeholder="כותרת" className="mb-1" />
+        <FormControl
+          type="textarea"
+          placeholder="תיאור"
+          rows={3}
+          className="mb-1"
+        />
         <input
           className="form-control"
           type="file"
