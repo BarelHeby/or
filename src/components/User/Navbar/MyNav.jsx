@@ -6,8 +6,36 @@ import "./css/navbar.css";
 import Button from "react-bootstrap/Button";
 import { BsTelephoneFill } from "react-icons/bs";
 import { Facebook, Instagram, Whatsapp } from "react-bootstrap-icons";
+import { useState } from "react";
+import axios from "axios";
 
 function MyNav() {
+  const [facebook, setFacebook] = useState("");
+  const [instegram, setinstegram] = useState("");
+  const [phone, setPhone] = useState("");
+  axios
+    .get(
+      process.env.REACT_APP_API_URL +
+        "/websites/" +
+        process.env.REACT_APP_WEBSITE_ID
+    )
+    .then((response) => {
+      let data = response.data;
+      setFacebook(data.facebook_link);
+      setinstegram(data.instegram_link);
+      setPhone(data.phone_link);
+
+      console.log(response);
+    });
+
+  function navigate_to_facebook(e) {
+    e.preventDefault();
+    window.open(facebook, "_blank");
+  }
+  function navigate_to_instegram(e) {
+    e.preventDefault();
+    window.open(instegram, "_blank");
+  }
   return (
     <div className=" d-flex justify-content-around align-items-center bg-dark ">
       <Navbar
@@ -48,20 +76,20 @@ function MyNav() {
       </Navbar>
       <div className=" text-white align-items-center d-flex ">
         <span className="text-center fs-5 me-2 ">דברו איתנו </span>
-        <Button variant="dark" className="fs-5" href="tel:+972543510535">
+        <Button variant="dark" className="fs-5" href={`tel:${phone}`}>
           <BsTelephoneFill />
         </Button>
         <Button
           variant="dark"
           className="fs-5"
-          href="https://api.whatsapp.com/send?phone=+972546555192&text=שלום אור, אני מעוניין לשמוע עוד בנוגע לשיפוץ"
+          href={`https://api.whatsapp.com/send?phone="+${phone}`}
         >
           <Whatsapp />
         </Button>
-        <Button variant="dark" className="fs-5">
+        <Button variant="dark" className="fs-5" onClick={navigate_to_instegram}>
           <Instagram />
         </Button>
-        <Button variant="dark" className="fs-5 ">
+        <Button variant="dark" className="fs-5 " onClick={navigate_to_facebook}>
           <Facebook />
         </Button>
       </div>
