@@ -8,7 +8,7 @@ function RecomendationCard() {
   const stars = [];
   for (let i = 0; i < 5; i++) {
     stars.push(
-      <Col xs={2}>
+      <Col key={i} xs={2}>
         <BsStarFill style={{ color: "#ffd500" }} className="" key={i} />
       </Col>
     );

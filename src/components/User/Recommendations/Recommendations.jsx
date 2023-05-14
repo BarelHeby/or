@@ -8,7 +8,7 @@ function Recommendations() {
   const cards = [];
   for (let i = 0; i < 8; i++) {
     cards.push(
-      <Col xs={6} sm={6} md={3}>
+      <Col key={i} xs={6} sm={6} md={3}>
         <RecomendationCard />
       </Col>
     );

@@ -1,32 +1,33 @@
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
-// import NavDropdown from "react-bootstrap/NavDropdown";
 import "./css/navbar.css";
 import Button from "react-bootstrap/Button";
 import { BsTelephoneFill } from "react-icons/bs";
 import { Facebook, Instagram, Whatsapp } from "react-bootstrap-icons";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
-
 function MyNav() {
   const [facebook, setFacebook] = useState("");
   const [instegram, setinstegram] = useState("");
   const [phone, setPhone] = useState("");
-  axios
-    .get(
-      process.env.REACT_APP_API_URL +
-        "/websites/" +
-        process.env.REACT_APP_WEBSITE_ID
-    )
-    .then((response) => {
-      let data = response.data;
-      setFacebook(data.facebook_link);
-      setinstegram(data.instegram_link);
-      setPhone(data.phone_link);
-
-      console.log(response);
-    });
+  const fetch_web_links = async () => {
+    axios
+      .get(
+        process.env.REACT_APP_API_URL +
+          "/websites/" +
+          process.env.REACT_APP_WEBSITE_ID
+      )
+      .then((response) => {
+        let data = response.data;
+        setFacebook(data.facebook_link);
+        setinstegram(data.instegram_link);
+        setPhone(data.phone_link);
+      });
+  };
+  useEffect(() => {
+    fetch_web_links();
+  }, []);
 
   function navigate_to_facebook(e) {
     e.preventDefault();

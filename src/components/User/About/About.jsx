@@ -1,11 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "./css/About.css";
-import Or from "../../../images/or.jpg";
 import Image from "react-bootstrap/Image";
+import axios from "axios";
 function About() {
+  const [logoPath, setLogoPath] = useState(null);
+  const fetch_web_linkss = async () => {
+    const resp = await axios.get(
+      process.env.REACT_APP_API_URL +
+        "/websites/" +
+        process.env.REACT_APP_WEBSITE_ID
+    );
+    const logo = resp.data.logo;
+    setLogoPath(process.env.REACT_APP_API_URL + logo);
+  };
+
+  useEffect(() => {
+    fetch_web_linkss();
+  }, []);
+
   return (
     <Container className="pe-5 ps-5">
       <h1 className="text-center  ">קצת עלינו</h1>
@@ -46,7 +61,16 @@ function About() {
           </p>
         </Col>
         <Col className="text-center  me-3 ms-3 ">
-          <Image alt="or" src={Or} className="rounded-circle border" fluid />
+          {logoPath ? (
+            <Image
+              alt="logo"
+              src={logoPath}
+              className="rounded-circle border"
+              fluid
+            />
+          ) : (
+            <div></div>
+          )}
         </Col>
       </Row>
     </Container>
