@@ -49,8 +49,8 @@ function AddRecomandationForm() {
 
   function addReview(e) {
     e.preventDefault();
-    const name = e.target.name.value;
-    const description = e.target.name.value;
+    // const name = e.target.name.value;
+    // const description = e.target.name.value;
     if (startSelected === 0) {
       setAlertColor("danger");
       setAlertText("בחר דירוג");

@@ -10,7 +10,7 @@ import AdminProjects from "./components/Admin/AdminDashboard/AdminProjects/Admin
 function App() {
   const [authenticated, setauthenticated] = useState(true);
   const adminUsers = { admin: "admin" };
-
+  console.log("api", process.env.REACT_APP_API_URL);
   function updateAuth(event) {
     event.preventDefault();
     const username = event.target.username.value;
