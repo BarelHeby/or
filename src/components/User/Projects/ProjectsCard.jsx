@@ -34,10 +34,7 @@ function ProjectsCards({ title, description, id }) {
     setImages(c);
     return data;
   };
-  const { isLoading, data, error } = useQuery(
-    "recomendations",
-    fetch_project_images
-  );
+  const { isLoading, error } = useQuery("recomendations", fetch_project_images);
   if (isLoading || error) {
     return <Card className="mb-3"></Card>;
   }
