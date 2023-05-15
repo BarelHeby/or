@@ -23,7 +23,7 @@ function About() {
           >
             <p id="about_text" className=" text-center mt-3 hei ">
               {website_info.data.about.split("new_line").map((i, key) => (
-                <label>{i}</label>
+                <label key={key}>{i}</label>
               ))}
             </p>
           </Col>
