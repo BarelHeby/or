@@ -1,6 +1,5 @@
 import React from "react";
 import { Button, Card } from "react-bootstrap";
-import or from "../../../../../images/or.jpg";
 
 function ProjectPhotoCard(props) {
   return (

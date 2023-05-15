@@ -12,7 +12,7 @@ function AdminLogin(props) {
     if (props.authenticated) {
       navigate("/Admin/Dashboard/projects");
     }
-  }, [props.authenticated]);
+  }, [props.authenticated, navigate]);
   return (
     <Container className="text-center my-5 d-flex justify-content-center">
       <Form onSubmit={props.updateAuth} className="border bg-light p-2 ">

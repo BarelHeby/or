@@ -4,11 +4,11 @@ import { BsStarFill } from "react-icons/bs";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
-function RecomendationCard() {
+function RecomendationCard({ name, review, rating, insert_date }) {
   const stars = [];
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < rating; i++) {
     stars.push(
-      <Col xs={2}>
+      <Col key={i} xs={2}>
         <BsStarFill style={{ color: "#ffd500" }} className="" key={i} />
       </Col>
     );
@@ -16,13 +16,10 @@ function RecomendationCard() {
   return (
     <Card className="mb-3 ">
       <Card.Body>
-        <Card.Title>רונית</Card.Title>
-        <Card.Text>
-          אור נתן חווית שירות מעולה, עניינית ורצינית. מטבח חדש נעשה בתוך 3 ימים
-          בלבד.
-        </Card.Text>
-        <label className="position-absolute top-0 start-0 ms-1 mt-1">
-          24/03/2023
+        <Card.Title className="mt-2">{name}</Card.Title>
+        <Card.Text>{review}</Card.Text>
+        <label className="position-absolute top-0 start-0 ms-2 mt-1 mb-1">
+          {insert_date}
         </label>
       </Card.Body>
       <Card.Footer>
