@@ -15,6 +15,10 @@ function Home() {
           <Carusel />
         </Row>
 
+        <Row id="about" className="pt-3 border-top mb-3">
+          <About />
+        </Row>
+
         <Row id="services" className="mt-3">
           <Services />
         </Row>
@@ -28,10 +32,6 @@ function Home() {
           className="d-flex justify-content-center pt-3 border-top mb-3 "
         >
           <Contact />
-        </Row>
-
-        <Row id="about" className="pt-3 border-top mb-3">
-          <About />
         </Row>
 
         <Row id="Recommendations" className="pt-3 border-top mb-3">
