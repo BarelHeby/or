@@ -6,6 +6,7 @@ import FormLabel from "react-bootstrap/FormLabel";
 import { BsStarFill } from "react-icons/bs";
 import AlertBox from "../AlertBox/AlertBox";
 import { useRef } from "react";
+import { Add_Recomendations } from "../scripts/recomandations";
 function AddRecomandationForm() {
   const [startSelected, setStarsSelected] = useState(0);
   const [alertText, setAlertText] = useState("");
@@ -47,10 +48,11 @@ function AddRecomandationForm() {
     buttons.push(b);
   }
 
-  function addReview(e) {
+  async function addReview(e) {
     e.preventDefault();
-    // const name = e.target.name.value;
-    // const description = e.target.name.value;
+    successalertBox.current.classList.remove("d-none");
+    const name = e.target.name.value;
+    const review = e.target.review.value;
     if (startSelected === 0) {
       setAlertColor("danger");
       setAlertText("בחר דירוג");
@@ -58,10 +60,16 @@ function AddRecomandationForm() {
       return;
     }
 
-    // TODO in success add review
-    setAlertText("נשלח בהצלחה");
-    setAlertColor("success");
-    successalertBox.current.classList.remove("d-none");
+    const resp = await Add_Recomendations(name, review, startSelected);
+    if (resp.ok) {
+      setAlertText("נשלח בהצלחה");
+      setAlertColor("success");
+      successalertBox.current.classList.remove("d-none");
+    } else {
+      setAlertText("שגיאה בשליחה");
+      setAlertColor("danger");
+      successalertBox.current.classList.remove("d-none");
+    }
   }
   return (
     <div>
@@ -76,7 +84,7 @@ function AddRecomandationForm() {
           as="textarea"
           rows={2}
           placeholder="תוכן הביקורת"
-          name="description"
+          name="review"
           required
         />
         <div className="d-flex justify-content-center align-items-center  ">

@@ -36,7 +36,7 @@ function Projects() {
     return data;
   };
 
-  const { isLoading, data, error } = useQuery("recomendations", fetchProjects, {
+  const { isLoading, error } = useQuery("recomendations", fetchProjects, {
     staleTime: 900000,
   });
   if (isLoading || error) {
