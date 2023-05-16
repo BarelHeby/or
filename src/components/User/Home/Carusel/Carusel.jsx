@@ -5,19 +5,32 @@ import third from "./images/contructions/3.jpg";
 import "./css/carusel.css";
 function Carusel(props) {
   return (
-    <Carousel fade pause="hover" touch={true} dir="ltr">
+    // <div style={{ position: "relative", paddingTop: "56.25%" }}>
+    <Carousel
+      className="aspect-ratio-container "
+      fade
+      pause="hover"
+      touch={true}
+      dir="ltr"
+    >
       <Carousel.Item>
         <div className="d-flex">
           <img
-            height="400"
+            height="250"
             className="d-block w-100"
             src={first}
             alt="First slide"
           />
           <img
-            height="400"
+            height="250"
             className="d-block w-100"
             src={second}
+            alt="First slide"
+          />
+          <img
+            height="250"
+            className="d-block w-100"
+            src={third}
             alt="First slide"
           />
         </div>
@@ -29,15 +42,21 @@ function Carusel(props) {
       <Carousel.Item>
         <div className="d-flex">
           <img
-            height="400"
+            height="250"
             className="d-block w-100"
             src={second}
             alt="First slide"
           />
           <img
-            height="400"
+            height="250"
             className="d-block w-100"
             src={third}
+            alt="First slide"
+          />
+          <img
+            height="250"
+            className="d-block w-100"
+            src={first}
             alt="First slide"
           />
         </div>
@@ -49,15 +68,21 @@ function Carusel(props) {
       <Carousel.Item>
         <div className="d-flex">
           <img
-            height="400"
+            height="250"
             className="d-block w-100"
             src={third}
             alt="First slide"
           />
           <img
-            height="400"
+            height="250"
             className="d-block w-100"
             src={first}
+            alt="First slide"
+          />
+          <img
+            height="250"
+            className="d-block w-100"
+            src={second}
             alt="First slide"
           />
         </div>
@@ -69,6 +94,7 @@ function Carusel(props) {
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
+    // </div>
   );
 }
 

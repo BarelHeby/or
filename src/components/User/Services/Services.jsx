@@ -36,7 +36,7 @@ function Services() {
                 <span className="fs-1 text-success">01</span>
               </Button>
 
-              <h2>{data.phase_1_header}</h2>
+              <h4>{data.phase_1_header}</h4>
               <p>{data.phase_1}</p>
             </Col>
             <Col>
@@ -44,7 +44,7 @@ function Services() {
                 <span className="fs-1 text-success">02</span>
               </Button>
 
-              <h2>{data.phase_2_header}</h2>
+              <h4>{data.phase_2_header}</h4>
               <p>{data.phase_2}</p>
             </Col>
             <Col>
@@ -52,7 +52,7 @@ function Services() {
                 <span className="fs-1 text-success">03</span>
               </Button>
 
-              <h2>{data.phase_3_header}</h2>
+              <h4>{data.phase_3_header}</h4>
               <p>{data.phase_3}</p>
             </Col>
             <Col>
@@ -60,7 +60,7 @@ function Services() {
                 <span className="fs-1 text-success">04</span>
               </Button>
 
-              <h2>{data.phase_4_header}</h2>
+              <h4>{data.phase_4_header}</h4>
               <p>{data.phase_4}</p>
             </Col>
           </Row>

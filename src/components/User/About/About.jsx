@@ -11,7 +11,7 @@ function About() {
     return <div></div>;
   } else
     return (
-      <Container className="pe-5 ps-5">
+      <Container className="pe-5 ps-5 w-75 ">
         <h1 className="text-center  ">קצת עלינו</h1>
         <Row className="align-items-center">
           <Col

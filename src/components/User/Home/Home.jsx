@@ -7,10 +7,12 @@ import About from "../About/About";
 import FloatButton from "./FloatButton/FloatButton";
 import Recommendations from "../Recommendations/Recommendations";
 import Projects from "../Projects/Projects";
+import "./css/Home.css";
 function Home() {
   return (
     <div>
-      <Container fluid className=" p-0">
+      <Container fluid className=" p-0 ">
+        <Row className="mar"></Row>
         <Row id="carusel">
           <Carusel />
         </Row>
