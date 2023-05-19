@@ -4,15 +4,15 @@ import { BsStarFill } from "react-icons/bs";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
-function RecomendationCard({ name, review, rating, insert_date }) {
-  const stars = [];
-  for (let i = 0; i < rating; i++) {
-    stars.push(
-      <Col key={i} xs={2}>
-        <BsStarFill style={{ color: "#ffd500" }} className="" key={i} />
+
+function RecommendationCard({ name, review, rating, insert_date }) {
+  const stars = Array.from({ length: rating }, (_, i) => {
+    return (
+      <Col xs={2} key={i}>
+        <BsStarFill style={{ color: "#ffd500" }} key={i} />
       </Col>
     );
-  }
+  });
   return (
     <Card className="mb-3 ">
       <Card.Body>
@@ -31,4 +31,4 @@ function RecomendationCard({ name, review, rating, insert_date }) {
   );
 }
 
-export default RecomendationCard;
+export default RecommendationCard;

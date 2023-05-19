@@ -4,12 +4,16 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "./css/About.css";
 import Image from "react-bootstrap/Image";
-import { Get_website_detailes } from "../scripts/website";
+import { useGetWebsiteDetails } from "../../../shared/queries";
+
 function About() {
-  const website_info = Get_website_detailes();
-  if (website_info.status === "loading") {
-    return <div></div>;
-  } else
+  // { status, data, error, isFetching }
+  const websiteDetails = useGetWebsiteDetails();
+  if(!websiteDetails || websiteDetails.status === 'error')
+    return <div>Error has occurred {websiteDetails.error.message}</div>;
+  else if(websiteDetails.isFetching || websiteDetails.status === 'loading')
+    return <div>Loading...</div>;
+  else 
     return (
       <Container className="pe-5 ps-5">
         <h1 className="text-center  ">קצת עלינו</h1>
@@ -22,7 +26,7 @@ function About() {
             className="bg-success text-white h-25  mb-3 rounded"
           >
             <p id="about_text" className=" text-center mt-3 hei ">
-              {website_info.data.about.split("new_line").map((i, key) => (
+              {websiteDetails.data.about.split("new_line").map((i, key) => (
                 <label key={key}>{i}</label>
               ))}
             </p>
@@ -30,7 +34,7 @@ function About() {
           <Col className="text-center  me-3 ms-3 ">
             <Image
               alt="logo"
-              src={process.env.REACT_APP_API_URL + website_info.data.logo}
+              src={process.env.REACT_APP_API_URL + websiteDetails.data.logo}
               className="rounded-circle border"
               fluid
             />

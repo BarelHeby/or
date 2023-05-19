@@ -5,40 +5,22 @@ import "./css/navbar.css";
 import Button from "react-bootstrap/Button";
 import { BsTelephoneFill } from "react-icons/bs";
 import { Facebook, Instagram, Whatsapp } from "react-bootstrap-icons";
-import { useEffect, useState } from "react";
-import axios from "axios";
-import { Get_website_detailes } from "../scripts/website";
-function MyNav() {
-  const [facebook, setFacebook] = useState("");
-  const [instegram, setinstegram] = useState("");
-  const [phone, setPhone] = useState("");
-  // const fetch_web_links = async () => {
-  //   axios
-  //     .get(
-  //       process.env.REACT_APP_API_URL +
-  //         "/websites/" +
-  //         process.env.REACT_APP_WEBSITE_ID
-  //     )
-  //     .then((response) => {
-  //       let data = response.data;
-  //       setFacebook(data.facebook_link);
-  //       setinstegram(data.instegram_link);
-  //       setPhone(data.phone_link);
-  //     });
-  // };
-  // useEffect(() => {
-  //   fetch_web_links();
-  // }, []);
-  const website_info = Get_website_detailes();
 
-  function navigate_to_facebook(e) {
-    e.preventDefault();
-    window.open(website_info.data.facebook_link, "_blank");
+function MyNav() {
+  const website_info = {
+    status: 'done',
+    data: {
+      phone_link: '123456789',
+      facebook_link: 'talor',
+      instagram_link: 'talor'
+    }    
+  };
+
+  function navigateTo(event, url, openInNewPage = true) {
+    event.preventDefault();
+    window.open(url, openInNewPage ? "_blank" : "_self");
   }
-  function navigate_to_instegram(e) {
-    e.preventDefault();
-    window.open(website_info.data.instegram_link, "_blank");
-  }
+
   if (website_info.status === "loading") {
     return <div></div>;
   } else
@@ -95,21 +77,21 @@ function MyNav() {
           <Button
             variant="dark"
             className="fs-5"
-            href={`https://api.whatsapp.com/send?phone="+${website_info.data.phone_link}`}
+            href={`https://api.whatsapp.com/send?phone=+${website_info.data.phone_link}`}
           >
             <Whatsapp />
           </Button>
           <Button
             variant="dark"
             className="fs-5"
-            onClick={navigate_to_instegram}
+            onClick={(e) => navigateTo(e, website_info.data.instagram_link)}
           >
             <Instagram />
           </Button>
           <Button
             variant="dark"
             className="fs-5 "
-            onClick={navigate_to_facebook}
+            onClick={(e) => navigateTo(e, website_info.data.facebook_link)}
           >
             <Facebook />
           </Button>
