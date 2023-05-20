@@ -1,5 +1,25 @@
 .App{
     overflow-x: hidden;
     font-size: 13px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Noto Naskh Arabic', sans-serif;
+}
+
+.bg-dark-costume{
+    background-color: #3d424a !important ;
+}
+
+.bg-warning-costume{
+    background-color: #ffa62b !important ;
+}
+
+.text-warning-costume{
+    color:  #ffa62b !important ;
+}
+
+.bg-white-less{
+    background-color: #f5f5f5;
+}
+
+.bg-white-more{
+    background-color: #f8f8f8;
 }

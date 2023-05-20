@@ -12,31 +12,34 @@ function Home() {
   return (
     <div>
       <Container fluid className=" p-0 ">
-        <Row className="mar"></Row>
+        {/* <Row className="mar"></Row> */}
         <Row id="carusel">
           <Carusel />
         </Row>
 
-        <Row id="about" className="pt-3 border-top mb-3">
+        {/* <Row id="about" className="pt-3 pb-3 border-top mb-3 bg-white-less">
           <About />
-        </Row>
+        </Row> */}
 
-        <Row id="services" className="mt-3">
+        <Row id="services" className="mt-3 bg-white-more">
           <Services />
         </Row>
 
-        <Row id="projects" className="pt-3 border-top mb-3">
+        <Row id="projects" className="pt-3 border-top  bg-white-less">
           <Projects />
         </Row>
 
         <Row
           id="contact"
-          className="d-flex justify-content-center pt-3 border-top mb-3 "
+          className="d-flex justify-content-center pt-3 border-top mb-3 bg-white-more"
         >
           <Contact />
         </Row>
 
-        <Row id="Recommendations" className="pt-3 border-top mb-3">
+        <Row
+          id="Recommendations"
+          className="pt-3 border-top mb-3 bg-white-less"
+        >
           <Recommendations />
         </Row>
       </Container>

@@ -2,7 +2,7 @@
     width: fit-content;
 }
 
-.nv{
+/* .nv{
     position: fixed;
   top: 0;
   left: 0;
@@ -11,4 +11,8 @@
   background-color: white;
   height: 50px;
   transition: background-color 0.3s ease;
+} */
+
+.nv{
+  height: 50px;
 }

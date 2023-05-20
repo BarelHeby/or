@@ -5,36 +5,39 @@ import Col from "react-bootstrap/Col";
 import "./css/About.css";
 import Image from "react-bootstrap/Image";
 import { Get_website_detailes } from "../scripts/website";
+import "../../../app.css";
 function About() {
   const website_info = Get_website_detailes();
   if (website_info.status === "loading") {
     return <div></div>;
   } else
     return (
-      <Container className="pe-5 ps-5 w-75 ">
-        <h1 className="text-center  ">קצת עלינו</h1>
+      <Container className="">
+        {/* <h1 className="text-center  ">קצת עלינו</h1> */}
         <Row className="align-items-center">
           <Col
-            xs={12}
-            md={7}
-            lg={9}
-            xl={10}
-            className="bg-success text-white h-25  mb-3 rounded"
+            // xs={12}
+            // md={7}
+            // lg={9}
+            // xl={10}
+            className="bg-dark-costume  h-25  mb-3 rounded  "
           >
-            <p id="about_text" className=" text-center mt-3 hei ">
+            <p id="about_text" className=" text-center mt-3 hei opacity-75">
               {website_info.data.about.split("new_line").map((i, key) => (
-                <label key={key}>{i}</label>
+                <p className="text-white opcaity-25" key={key}>
+                  {i}
+                </p>
               ))}
             </p>
           </Col>
-          <Col className="text-center  me-3 ms-3 ">
+          {/* <Col className="text-center  me-3 ms-3 ">
             <Image
               alt="logo"
               src={process.env.REACT_APP_API_URL + website_info.data.logo}
               className="rounded-circle border"
               fluid
             />
-          </Col>
+          </Col> */}
         </Row>
       </Container>
     );

@@ -14,7 +14,7 @@ function Projects() {
       {
         params: {
           website_id: process.env.REACT_APP_WEBSITE_ID,
-          is_in_use: "False",
+          is_in_use: "True",
         },
       }
     );
