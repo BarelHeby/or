@@ -41,6 +41,7 @@ function AddRecommendationForm({
     if (starsSelected === 0) {
       setIsAddReviewSucceeded(false);
       setAlertText("אנא בחר דירוג");
+      successAlertBox.current.classList.remove("d-none");
       return;
     }
 
@@ -92,7 +93,7 @@ function AddRecommendationForm({
           הוסף ביקורת
         </Button>
       </Form>
-      <div ref={successAlertBox}>
+      <div ref={successAlertBox} className="d-none">
         <AlertBox
           color={isAddReviewSucceeded ? "success" : "danger"}
           text={alertText}
