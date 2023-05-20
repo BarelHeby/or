@@ -5,22 +5,22 @@ import "./css/navbar.css";
 import Button from "react-bootstrap/Button";
 import { BsTelephoneFill } from "react-icons/bs";
 import { Facebook, Instagram, Whatsapp } from "react-bootstrap-icons";
+import { useGetWebsiteDetails } from "../../../shared/queries";
 
 function MyNav() {
-  const website_info = {
-    status: 'done',
-    data: {
-      phone_link: '123456789',
-      facebook_link: 'talor',
-      instagram_link: 'talor'
-    }    
-  };
-
+  // const website_info = {
+  //   status: "done",
+  //   data: {
+  //     phone_link: "123456789",
+  //     facebook_link: "talor",
+  //     instagram_link: "talor",
+  //   },
+  // };
+  const website_info = useGetWebsiteDetails();
   function navigateTo(event, url, openInNewPage = true) {
     event.preventDefault();
     window.open(url, openInNewPage ? "_blank" : "_self");
   }
-
 
   function remove_opacity(e) {
     e.target.classList.remove("opacity-75");
@@ -28,7 +28,9 @@ function MyNav() {
   function return_opacity(e) {
     e.target.classList.add("opacity-75");
   }
-  if (website_info.status === "loading") {
+  if (website_info.status === "error")
+    return <div>Error has occurred {website_info.error.message}</div>;
+  else if (website_info.status === "loading") {
     return <div></div>;
   } else
     return (
