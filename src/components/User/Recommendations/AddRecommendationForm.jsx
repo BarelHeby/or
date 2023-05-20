@@ -6,10 +6,13 @@ import FormLabel from "react-bootstrap/FormLabel";
 import { BsStarFill } from "react-icons/bs";
 import AlertBox from "../AlertBox/AlertBox";
 import { useRef } from "react";
-
-function AddRecommendationForm() {
+import { addRecommendationQuery } from "../../../shared/queries";
+function AddRecommendationForm({
+  setNumOfRecommendations,
+  numOfRecommendation,
+}) {
   const [starsSelected, setStarsSelected] = useState(0);
-  const [alertText, setAlertText] = useState('');
+  const [alertText, setAlertText] = useState("");
   const [isAddReviewSucceeded, setIsAddReviewSucceeded] = useState(true);
   const successAlertBox = useRef();
 
@@ -19,11 +22,11 @@ function AddRecommendationForm() {
         <Button
           key={i}
           variant="transparent"
-          className="text-center rounded border-0"          
+          className="text-center rounded border-0"
           onClick={() => setStarsSelected(i + 1)}
         >
           <BsStarFill
-            style={{color: i < starsSelected ? '#ffd500' : 'black'}}
+            style={{ color: i < starsSelected ? "#ffd500" : "black" }}
             className="fs-5 "
             key={i}
             id={"star" + i}
@@ -33,25 +36,40 @@ function AddRecommendationForm() {
     });
   }, [starsSelected]);
 
-  const addReview = (e) => {
+  const AddReview = async (e) => {
     e.preventDefault();
     if (starsSelected === 0) {
       setIsAddReviewSucceeded(false);
-      setAlertText("בחר דירוג");
-      successAlertBox.current.classList.remove("d-none");
+      setAlertText("אנא בחר דירוג");
       return;
     }
 
-    // TODO in success add review
-    setAlertText("נשלח בהצלחה");
+    const name = e.target.name.value;
+    const review = e.target.description.value;
+    const rating = starsSelected;
+    console.log(name, review, rating);
+    const addReviewMutation = await addRecommendationQuery({
+      name,
+      review,
+      rating,
+    });
+    if (!addReviewMutation || addReviewMutation.status === 400) {
+      setIsAddReviewSucceeded(false);
+      setAlertText("אירעה שגיאה בשליחת הביקורת");
+      return;
+    } else {
+      setIsAddReviewSucceeded(true);
+      setAlertText("נשלח בהצלחה");
+      setNumOfRecommendations(numOfRecommendation + 1);
+    }
     successAlertBox.current.classList.remove("d-none");
-  }
+  };
 
   return (
     <div>
       <Form
         className="p-2 pt-3 mb-1 mt-1 border rounded bg-light "
-        onSubmit={addReview}
+        onSubmit={AddReview}
       >
         <h3>הוסף ביקורת</h3>
         <FormControl className="mb-2" name="name" placeholder="שם" required />
@@ -75,7 +93,10 @@ function AddRecommendationForm() {
         </Button>
       </Form>
       <div ref={successAlertBox}>
-        <AlertBox color={isAddReviewSucceeded ? "success" : "danger"} text={alertText} />
+        <AlertBox
+          color={isAddReviewSucceeded ? "success" : "danger"}
+          text={alertText}
+        />
       </div>
     </div>
   );
