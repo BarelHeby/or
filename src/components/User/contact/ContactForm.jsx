@@ -75,7 +75,7 @@ function ContactForm() {
         name="message"
       />
       <Button type="submit" className="mt-2 w-100 bg-warning-costume border-0 ">
-        <labe className="text-black opacity-75">שלח</labe>
+        <label className="text-black opacity-75">שלח</label>
       </Button>
       <div className="fs-4">
         <Alert variant="success" className="d-none" ref={message_to_user}>

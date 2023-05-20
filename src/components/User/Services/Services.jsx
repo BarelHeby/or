@@ -5,7 +5,6 @@ import Row from "react-bootstrap/Row";
 import Form from "react-bootstrap/Form";
 import { useQuery } from "react-query";
 import axios from "axios";
-import "../../../app.css";
 import ServiceCard from "./ServiceCard";
 function Services() {
   const fetchPhases = async () => {

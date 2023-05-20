@@ -18,13 +18,13 @@ function ServiceCard({ phase, header, text, icon }) {
   }
   return (
     <div
-      class="card  border-0 mb-2 me-2"
+      className="card  border-0 mb-2 me-2"
       ref={card}
       onMouseMove={change_colors}
       onMouseOut={default_colors}
     >
-      <div class="row g-0 align-items-center">
-        <div class="col-2 me-4 ps-2">
+      <div className="row g-0 align-items-center">
+        <div className="col-2 me-4 ps-2">
           <Button
             className="btn rounded-start bg-dark-costume btn-lg border "
             ref={number}
@@ -34,10 +34,10 @@ function ServiceCard({ phase, header, text, icon }) {
             </span>
           </Button>
         </div>
-        <div class="col" ref={text_contect}>
-          <div class="card-body">
-            <h4 class="card-title">{header}</h4>
-            <p class="card-text opacity-50">{text}</p>
+        <div className="col" ref={text_contect}>
+          <div className="card-body">
+            <h4 className="card-title">{header}</h4>
+            <p className="card-text opacity-50">{text}</p>
           </div>
         </div>
       </div>

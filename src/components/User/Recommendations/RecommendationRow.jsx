@@ -5,7 +5,6 @@ import RecomendationCard from "./RecommendationCard";
 import { useGetRecommendations } from "../../../shared/queries";
 
 function RecommendationRow() {
-
   const recomendations = useGetRecommendations();
 
   if (recomendations.status === "error")
@@ -16,7 +15,6 @@ function RecommendationRow() {
     return (
       <Row className="text-center">
         {recomendations.data.map((review, key) => {
-          console.log(review.insert_date);
           return (
             <Col key={key} xs={6} sm={6} md={3}>
               <RecomendationCard
