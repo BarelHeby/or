@@ -6,7 +6,6 @@ import { useGetRecommendations } from "../../../shared/queries";
 
 function RecommendationRow({ numOfRecommendation, setNumOfRecommendations }) {
   const recomendations = useGetRecommendations();
-  let firstTime = true;
   useEffect(() => {
     if (
       !recomendations.isFetching &&
