@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.rtl.min.css";
 import User from "./components/User/User";
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
-import "./app.css";
+import "./App.css";
 import AdminDashboard from "./components/Admin/AdminDashboard/AdminDashboard";
 import AdminLogin from "./components/Admin/AdminLogin/AdminLogin";
 import AdminProjects from "./components/Admin/AdminDashboard/AdminProjects/AdminProjects";
@@ -10,57 +10,90 @@ import { QueryClient, QueryClientProvider } from "react-query";
 
 function App() {
   const queryClient = new QueryClient();
-  const [authenticated, setauthenticated] = useState(true);
+  const [authenticated, setAuthenticated] = useState(false);
   const adminUsers = { admin: "admin" };
-  function updateAuth(event) {
+
+  const updateAuth = (event) => {
     event.preventDefault();
     const username = event.target.username.value;
     const password = event.target.password.value;
-    if (username in adminUsers && adminUsers[username] === password) {
-      setauthenticated(!authenticated);
+    if (
+      Object.keys(adminUsers).includes(username) &&
+      adminUsers[username] === password
+    ) {
+      setAuthenticated(true);
       return true;
     }
     alert("שם משתמש או סיסמא שגויים");
     return false;
-  }
+  };
+
+  const ProtectedRoute = ({ authenticated, redirectPath = "/", children }) => {
+    if (!authenticated) {
+      return <Navigate to={redirectPath} replace />;
+    }
+    return children;
+  };
+
+  const routes = [
+    { exact: false, path: "/", element: <Navigate to="/home" /> },
+    { exact: false, path: "/home", element: <User />},
+    { exact: false, path: "/admin", element: <Navigate to="/admin/login" /> },
+    {
+      exact: true,
+      path: "/admin/login",
+      element: (
+        <AdminLogin updateAuth={updateAuth} authenticated={authenticated} />
+      ),
+    },
+    {
+      exact: true,
+      path: "/admin/dashboard",
+      element: (
+        <ProtectedRoute authenticated={authenticated}>
+          <AdminDashboard />
+        </ProtectedRoute>
+      ),
+    },
+    {
+      exact: true,
+      path: "/admin/dashboard/projects",
+      element: (
+        <ProtectedRoute authenticated={authenticated}>
+          <AdminProjects />
+        </ProtectedRoute>
+      ),
+    },
+    {
+      exact: true,
+      path: "/admin/dashboard/reviews",
+      element: (
+        <ProtectedRoute authenticated={authenticated}>
+          <AdminDashboard />
+        </ProtectedRoute>
+      ),
+    },
+  ];
 
   return (
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
-        <div className="App">
-          <Routes>
-            <Route path="/" element={<Navigate to="/home" />} />
-            <Route path="/home" element={<User />} />
-            <Route path="/admin" element={<Navigate to="/admin/login" />} />
-            <Route
-              excact
-              path="/admin/login"
-              element={
-                <AdminLogin
-                  authenticated={authenticated}
-                  updateAuth={updateAuth}
-                />
-              }
-            />
-            <Route
-              excact
-              path="/admin/dashboard"
-              element={<AdminDashboard authenticated={authenticated} />}
-            />
-            <Route
-              excact
-              path="/admin/dashboard/projects"
-              element={<AdminProjects authenticated={authenticated} />}
-            />
-            <Route
-              excact
-              path="/admin/dashboard/reviews"
-              element={<AdminDashboard authenticated={authenticated} />}
-            />
-          </Routes>
+    <div className="App">
+        <Routes>
+          {routes.map((r, index) => {
+            return (
+              <Route
+                key={index}
+                exact={r.exact}
+                path={r.path}
+                element={r.element}
+              />
+            );
+          })}
+        </Routes>
         </div>
       </BrowserRouter>
-    </QueryClientProvider>
+      </QueryClientProvider>    
   );
 }
 

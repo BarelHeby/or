@@ -3,7 +3,6 @@ import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Form from "react-bootstrap/Form";
-import "./css/Services.css";
 import { useQuery } from "react-query";
 import axios from "axios";
 import "../../../app.css";

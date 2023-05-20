@@ -2,9 +2,19 @@ import React from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import AddRecomandationForm from "./AddRecomandationForm";
-import RecomendationRow from "./RecomendationRow";
+import RecomendationRow from "./RecommendationRow";
+import AddRecomandationForm from "./AddRecommendationForm";
 function Recommendations() {
+  /*
+  const cards = Array.from({ length: 8 }, (_, i) => {
+    return (
+      <Col xs={6} sm={6} md={3} key={i}>
+        <RecomendationCard key={i} />
+      </Col>
+    );
+  });
+  */
+
   return (
     <Container className="pe-5 ps-5 text-center">
       <h1 className="mb-3">ביקורות</h1>

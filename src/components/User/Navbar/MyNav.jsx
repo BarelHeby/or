@@ -5,18 +5,22 @@ import "./css/navbar.css";
 import Button from "react-bootstrap/Button";
 import { BsTelephoneFill } from "react-icons/bs";
 import { Facebook, Instagram, Whatsapp } from "react-bootstrap-icons";
-import { Get_website_detailes } from "../scripts/website";
-function MyNav() {
-  const website_info = Get_website_detailes();
 
-  function navigate_to_facebook(e) {
-    e.preventDefault();
-    window.open(website_info.data.facebook_link, "_blank");
+function MyNav() {
+  const website_info = {
+    status: 'done',
+    data: {
+      phone_link: '123456789',
+      facebook_link: 'talor',
+      instagram_link: 'talor'
+    }    
+  };
+
+  function navigateTo(event, url, openInNewPage = true) {
+    event.preventDefault();
+    window.open(url, openInNewPage ? "_blank" : "_self");
   }
-  function navigate_to_instegram(e) {
-    e.preventDefault();
-    window.open(website_info.data.instegram_link, "_blank");
-  }
+
 
   function remove_opacity(e) {
     e.target.classList.remove("opacity-75");
@@ -90,21 +94,21 @@ function MyNav() {
           <Button
             variant="transparent"
             className="fs-5 rounded-circle align-items-center "
-            href={`https://api.whatsapp.com/send?phone="+${website_info.data.phone_link}`}
+            href={`https://api.whatsapp.com/send?phone=+${website_info.data.phone_link}`}
           >
             <Whatsapp className="text-white " />
           </Button>
           <Button
             variant="transparent"
             className="fs-5 rounded-circle align-items-center"
-            onClick={navigate_to_instegram}
+            onClick={(e) => navigateTo(e, website_info.data.instagram_link)}
           >
             <Instagram className="text-white " />
           </Button>
           <Button
             variant="transparent"
             className="fs-5 rounded-circle align-items-center"
-            onClick={navigate_to_facebook}
+            onClick={(e) => navigateTo(e, website_info.data.facebook_link)}
           >
             <Facebook className="text-white " />
           </Button>
