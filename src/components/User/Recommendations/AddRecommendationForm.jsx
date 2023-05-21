@@ -48,7 +48,7 @@ function AddRecommendationForm({
     const name = e.target.name.value;
     const review = e.target.description.value;
     const rating = starsSelected;
-    console.log(name, review, rating);
+    
     const addReviewMutation = await addRecommendationQuery({
       name,
       review,
