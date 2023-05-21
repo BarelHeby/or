@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
 import { useRef } from "react";
+import "./css/style.css";
 function ServiceCard({ phase, header, text, icon }) {
   const card = useRef();
   const number = useRef();
@@ -18,7 +19,7 @@ function ServiceCard({ phase, header, text, icon }) {
   }
   return (
     <div
-      className="card  border-0 mb-2 me-2"
+      className="card  border-0 mb-2 me-2 costume-curser"
       ref={card}
       onMouseMove={change_colors}
       onMouseOut={default_colors}
@@ -26,7 +27,7 @@ function ServiceCard({ phase, header, text, icon }) {
       <div className="row g-0 align-items-center">
         <div className="col-2 me-4 ps-2">
           <Button
-            className="btn rounded-start bg-dark-costume btn-lg border "
+            className="btn rounded-start bg-dark-costume btn-lg border costume-curser"
             ref={number}
           >
             <span className="fs-1 text-warning-costume opacity-75">
