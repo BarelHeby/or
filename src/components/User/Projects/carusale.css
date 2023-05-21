@@ -14,15 +14,15 @@
     cursor:default;
     margin-bottom: 4%;
 }
-/* Button{
-    cursor: pointer !important;
-} */
+
 .ac{
     z-index: 0 !important;
 }
 
 .crd{
     cursor: pointer;
+    width: 300px;
+    margin: 0 auto;
 }
 .btn-label{
     cursor: pointer;
