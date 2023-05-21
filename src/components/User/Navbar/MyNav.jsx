@@ -64,35 +64,35 @@ function MyNav() {
           </Container>
         </Navbar>
 
-        <div className=" text-white align-items-center d-flex  ps-3 ">
-          <span className="text-center fs-5 me-2  ">דברו איתנו </span>
+        <div className=" text-white align-items-center d-flex ps-3">
+          <span className="text-center fs-5 me-2">דברו איתנו </span>
           <Button
             variant="transparent"
             className="fs-5 rounded-circle align-items-center"
             href={`tel:${website_info.data.phone}`}
           >
-            <BsTelephoneFill className="text-white " />
+            <BsTelephoneFill className="text-white" />
           </Button>
           <Button
             variant="transparent"
             className="fs-5 rounded-circle align-items-center "
             href={`https://api.whatsapp.com/send?phone=+${website_info.data.phone_link}`}
           >
-            <Whatsapp className="text-white " />
+            <Whatsapp className="text-white" />
           </Button>
           <Button
             variant="transparent"
             className="fs-5 rounded-circle align-items-center"
-            onClick={(e) => navigateTo(e, website_info.data.instagram_link)}
+            onClick={(e) => navigateTo(e, website_info.data.instegram_link)}
           >
-            <Instagram className="text-white " />
+            <Instagram className="text-white" />
           </Button>
           <Button
             variant="transparent"
             className="fs-5 rounded-circle align-items-center"
             onClick={(e) => navigateTo(e, website_info.data.facebook_link)}
           >
-            <Facebook className="text-white " />
+            <Facebook className="text-white" />
           </Button>
         </div>
       </div>
