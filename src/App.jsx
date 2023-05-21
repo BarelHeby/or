@@ -37,7 +37,7 @@ function App() {
 
   const routes = [
     { exact: false, path: "/", element: <Navigate to="/home" /> },
-    { exact: false, path: "/home", element: <User />},
+    { exact: false, path: "/home", element: <User /> },
     { exact: false, path: "/admin", element: <Navigate to="/admin/login" /> },
     {
       exact: true,
@@ -78,22 +78,22 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
-    <div className="App">
-        <Routes>
-          {routes.map((r, index) => {
-            return (
-              <Route
-                key={index}
-                exact={r.exact}
-                path={r.path}
-                element={r.element}
-              />
-            );
-          })}
-        </Routes>
+        <div className="App">
+          <Routes>
+            {routes.map((r, index) => {
+              return (
+                <Route
+                  key={index}
+                  exact={r.exact}
+                  path={r.path}
+                  element={r.element}
+                />
+              );
+            })}
+          </Routes>
         </div>
       </BrowserRouter>
-      </QueryClientProvider>    
+    </QueryClientProvider>
   );
 }
 

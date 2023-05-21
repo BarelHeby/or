@@ -1,20 +1,20 @@
-import Carusel from "./Carusel/Carusel";
+// import Carusel from "./Carusel/Carusel";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Services from "../Services/Services";
 import Contact from "../contact/Contact";
-import About from "../About/About";
 import FloatButton from "./FloatButton/FloatButton";
 import Recommendations from "../Recommendations/Recommendations";
 import Projects from "../Projects/Projects";
 import "./css/Home.css";
+import Header from "../Header/Header";
 function Home() {
   return (
     <div>
       <Container fluid className=" p-0 ">
         {/* <Row className="mar"></Row> */}
         <Row id="carusel">
-          <Carusel />
+          <Header />
         </Row>
 
         {/* <Row id="about" className="pt-3 pb-3 border-top mb-3 bg-white-less">

@@ -1,0 +1,21 @@
+.topBox{
+    width: fit-content;
+    max-width: 50%;
+    margin: auto;
+    height: fit-content;
+    max-height: 40%;
+    padding: 5px;
+}
+
+
+
+.background_image{
+    background-image: url('../images/construction-14.jpg') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    height: 40vh;
+}
+.about{
+    max-height: 35vh;
+    overflow-y: scroll;
+}
