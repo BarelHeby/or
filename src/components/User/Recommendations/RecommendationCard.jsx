@@ -9,7 +9,7 @@ function RecommendationCard({ name, review, rating, insert_date }) {
   const stars = Array.from({ length: rating }, (_, i) => {
     return (
       <Col xs={2} key={i}>
-        <BsStarFill style={{ color: "#ffa62b" }} key={i} />
+        <BsStarFill style={{ color: "#fcc404" }} key={i} />
       </Col>
     );
   });

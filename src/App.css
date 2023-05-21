@@ -3,17 +3,19 @@
     font-size: 13px;
     font-family: 'Noto Naskh Arabic', sans-serif;
 }
-
+.text-dark-costume{
+    color: #0d1821 
+}
 .bg-dark-costume{
-    background-color: #3d424a !important ;
+    background-color: #0d1821 !important ;
 }
-
+/* 3d424a */
 .bg-warning-costume{
-    background-color: #ffa62b !important ;
+    background-color: #fcc404 !important ;
 }
-
+/* ffa62b */
 .text-warning-costume{
-    color:  #ffa62b !important ;
+    color:  #fcc404 !important ;
 }
 
 .bg-white-less{
@@ -22,4 +24,8 @@
 
 .bg-white-more{
     background-color: #f8f8f8;
+}
+
+.bg-white-theme{
+    background-color: #F4F7F5;
 }

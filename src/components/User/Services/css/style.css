@@ -1,3 +1,7 @@
 .costume-curser{
     cursor: default !important;
 }
+
+.phase_card{
+    height: 120px;
+}

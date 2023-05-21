@@ -26,7 +26,7 @@ function AddRecommendationForm({
           onClick={() => setStarsSelected(i + 1)}
         >
           <BsStarFill
-            style={{ color: i < starsSelected ? "#ffa62b" : "black" }}
+            style={{ color: i < starsSelected ? "#fcc404" : "black" }}
             className="fs-5 "
             key={i}
             id={"star" + i}
@@ -48,7 +48,7 @@ function AddRecommendationForm({
     const name = e.target.name.value;
     const review = e.target.description.value;
     const rating = starsSelected;
-    
+
     const addReviewMutation = await addRecommendationQuery({
       name,
       review,
