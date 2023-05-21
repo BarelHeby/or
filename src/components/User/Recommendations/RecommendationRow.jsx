@@ -27,7 +27,7 @@ function RecommendationRow({ numOfRecommendation, setNumOfRecommendations }) {
       <Row className="text-center">
         {recomendations.data.map((review, key) => {
           return (
-            <Col key={key} xs={6} sm={6} md={3}>
+            <Col key={key} xs={12} md={6} xl={4}>
               <RecomendationCard
                 name={review.name}
                 review={review.review}

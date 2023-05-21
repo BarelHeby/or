@@ -83,11 +83,11 @@ function AddRecommendationForm({
           required
         />
         <div className="d-flex justify-content-center align-items-center  ">
-          <FormLabel className="mt-1">לא מרוצה</FormLabel>
+          <FormLabel className="mt-1 ms-1">לא מרוצה</FormLabel>
           <div className="mb-2 d-flex" key={0} id="btns">
             {buttons}
           </div>
-          <FormLabel className="mt-1"> מרוצה מאוד</FormLabel>
+          <FormLabel className="mt-1 me-1"> מרוצה מאוד</FormLabel>
         </div>
         <Button type="submit" variant="dark">
           הוסף ביקורת
