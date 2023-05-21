@@ -8,6 +8,7 @@ import Recommendations from "../Recommendations/Recommendations";
 import Projects from "../Projects/Projects";
 import "./css/Home.css";
 import Header from "../Header/Header";
+import Specialties from "../Specialties/Specialties";
 function Home() {
   return (
     <div>
@@ -16,10 +17,13 @@ function Home() {
           <Header />
         </Row>
 
-        <Row id="services" className="pt-3 pb-3 bg-white-more">
+        {/* <Row id="services" className="pt-3 pb-3 bg-white-more">
           <Services />
-        </Row>
+        </Row> */}
 
+        <Row id="services" className="pt-3 pb-3 bg-white-more">
+          <Specialties />
+        </Row>
         <Row id="projects" className="pt-3 border-top pb-3  bg-white-less">
           <Projects />
         </Row>

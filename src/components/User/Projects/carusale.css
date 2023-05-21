@@ -1,5 +1,5 @@
 .carusaleImg{
-    height: 200px;
+    height: 250px;
     width: 100%;
 }
 
@@ -21,7 +21,7 @@
 
 .crd{
     cursor: pointer;
-    width: 300px;
+    width: 100%;
     margin: 0 auto;
 }
 .btn-label{
