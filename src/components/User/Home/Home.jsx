@@ -12,14 +12,9 @@ function Home() {
   return (
     <div>
       <Container fluid className=" p-0 ">
-        {/* <Row className="mar"></Row> */}
-        <Row id="carusel">
+        <Row id="about">
           <Header />
         </Row>
-
-        {/* <Row id="about" className="pt-3 pb-3 border-top mb-3 bg-white-less">
-          <About />
-        </Row> */}
 
         <Row id="services" className="pt-3 pb-3 bg-white-more">
           <Services />

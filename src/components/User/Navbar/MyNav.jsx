@@ -8,15 +8,13 @@ import { Facebook, Instagram, Whatsapp } from "react-bootstrap-icons";
 import { useGetWebsiteDetails } from "../../../shared/queries";
 
 function MyNav() {
-  // const website_info = {
-  //   status: "done",
-  //   data: {
-  //     phone_link: "123456789",
-  //     facebook_link: "talor",
-  //     instagram_link: "talor",
-  //   },
-  // };
   const website_info = useGetWebsiteDetails();
+  const links = [
+    { name: "קצת עלינו", link: "#about" },
+    { name: "פרויקטים", link: "#projects" },
+    { name: "צור קשר", link: "#contact" },
+    { name: "ביקורות", link: "#Recommendations" },
+  ];
   function navigateTo(event, url, openInNewPage = true) {
     event.preventDefault();
     window.open(url, openInNewPage ? "_blank" : "_self");
@@ -39,46 +37,28 @@ function MyNav() {
           <Container>
             <Navbar.Toggle
               aria-controls="mainNav"
-              className="border-0 bg-dark-costume  "
+              className="border-0 bg-white rounded "
             />
             <Navbar.Offcanvas
               id="mainNav"
-              className="bg-dark-costume justify-content-center w-25 text-center h-50 rounded  ms-3"
+              className="bg-dark-costume justify-content-center w-50 text-center h-100 rounded  ms-3"
               variant="dark"
+              tabIndex="0"
             >
-              <Nav variant="dark ">
-                <Nav.Link
-                  className="text-white m-1  opacity-75 "
-                  href="#projects"
-                  onMouseOver={remove_opacity}
-                  onMouseLeave={return_opacity}
-                >
-                  פרויקטים
-                </Nav.Link>
-                <Nav.Link
-                  className="text-white m-1 opacity-75"
-                  href="#contact"
-                  onMouseOver={remove_opacity}
-                  onMouseLeave={return_opacity}
-                >
-                  צור קשר
-                </Nav.Link>
-                <Nav.Link
-                  className="text-white m-1 opacity-75 "
-                  href="#about"
-                  onMouseOver={remove_opacity}
-                  onMouseLeave={return_opacity}
-                >
-                  קצת עלינו
-                </Nav.Link>
-                <Nav.Link
-                  className="text-white m-1 opacity-75 "
-                  href="#Recommendations"
-                  onMouseOver={remove_opacity}
-                  onMouseLeave={return_opacity}
-                >
-                  ביקורות
-                </Nav.Link>
+              <Nav>
+                {links.map((link, key) => {
+                  return (
+                    <Nav.Link
+                      key={key}
+                      className="text-white m-1 opacity-75 "
+                      href={link.link}
+                      onMouseOver={remove_opacity}
+                      onMouseLeave={return_opacity}
+                    >
+                      {link.name}
+                    </Nav.Link>
+                  );
+                })}
               </Nav>
             </Navbar.Offcanvas>
           </Container>
