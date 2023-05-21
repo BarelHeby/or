@@ -24,6 +24,7 @@ function ProjectsCard({ title, description, id }) {
         <Carousel.Caption
           ref={overlay}
           className="text-white bg-dark-costume  rounded caruselCaption d-none "
+          onClick={displayOverlay}
         >
           <h3>{title}</h3>
           <label className="opacity-75 mb-2">{description}</label>
