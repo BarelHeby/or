@@ -10,7 +10,7 @@ function Recommendations() {
     <Container className="pe-5 ps-5 text-center">
       <h1 className="mb-3">ביקורות</h1>
       <Row className="align-items-center">
-        <Col xs={12} lg={4}>
+        <Col xs={12} lg={4} className="mb-3">
           <AddRecommendationForm
             setNumOfRecommendations={setNumOfRecommendations}
             numOfRecommendation={numOfRecommendations}

@@ -4,7 +4,7 @@ import { BsStarFill } from "react-icons/bs";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
-
+import "./Recommendation.css";
 function RecommendationCard({ name, review, rating, insert_date }) {
   const stars = Array.from({ length: rating }, (_, i) => {
     return (
@@ -14,8 +14,8 @@ function RecommendationCard({ name, review, rating, insert_date }) {
     );
   });
   return (
-    <Card className="mb-3 ">
-      <Card.Body>
+    <Card className="mb-3  ">
+      <Card.Body className="recomendationCardHeader">
         <Card.Title className="mt-2">{name}</Card.Title>
         <Card.Text>{review}</Card.Text>
         <label className="position-absolute top-0 start-0 ms-2 mt-1 mb-1">

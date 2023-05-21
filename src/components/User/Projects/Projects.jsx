@@ -4,6 +4,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import ProjectsCards from "./ProjectsCard";
 import { useGetProjects } from "../../../shared/queries";
+import { BsHandIndex } from "react-icons/bs";
 function Projects() {
   const projects = useGetProjects();
   if (projects.status === "error")
@@ -13,7 +14,11 @@ function Projects() {
   else
     return (
       <Container className="pe-5 ps-5">
-        <h1 className="text-center ">פרויקטים</h1>
+        <div className="d-flex justify-content-center align-items-center space-between">
+          <h1 className="text-center ">פרויקטים</h1>
+
+          <BsHandIndex className="fs-5 ms-2 mb-3 mb-sm-1 " />
+        </div>
         <Row className="justify-content-center align-items-center">
           {projects.data.map((project, key) => {
             return (

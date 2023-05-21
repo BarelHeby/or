@@ -26,7 +26,7 @@ function ProjectsCard({ title, description, id }) {
           className="text-white bg-dark-costume  rounded caruselCaption d-none "
           onClick={displayOverlay}
         >
-          <h3>{title}</h3>
+          <h5>{title}</h5>
           <label className="opacity-75 mb-2">{description}</label>
           <br />
           <Button href="#contact" className="bg-warning-costume border-0 m-0 ">
