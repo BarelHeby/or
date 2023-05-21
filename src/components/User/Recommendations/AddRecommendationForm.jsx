@@ -26,7 +26,7 @@ function AddRecommendationForm({
           onClick={() => setStarsSelected(i + 1)}
         >
           <BsStarFill
-            style={{ color: i < starsSelected ? "#ffd500" : "black" }}
+            style={{ color: i < starsSelected ? "#ffa62b" : "black" }}
             className="fs-5 "
             key={i}
             id={"star" + i}
