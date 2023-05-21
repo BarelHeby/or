@@ -22,7 +22,7 @@ function Projects() {
         <Row className="justify-content-center align-items-center">
           {projects.data.map((project, key) => {
             return (
-              <Col xs={12} sm={6} lg={4} xxl={3} key={key}>
+              <Col xs={12} md={6} lg={4} xxl={3} key={key}>
                 <ProjectsCards
                   title={project.title}
                   description={project.description}
