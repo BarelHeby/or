@@ -18,8 +18,10 @@ const getRecommendationsQuery = async () => {
   return await res.json();
 };
 
-const getProjectsQuery = async () => {
-  const url = new URL(process.env.REACT_APP_API_URL + "/projects");
+const getProjectsQuery = async (id) => {
+  console.log("id", id);
+  const urlPath = id ? "/projects/" + id : "/projects";
+  const url = new URL(process.env.REACT_APP_API_URL + urlPath);
   const params = {
     website_id: process.env.REACT_APP_WEBSITE_ID,
     is_in_use: "True",
@@ -62,9 +64,12 @@ export const useGetWebsiteDetails = () =>
   useQuery(`${getWebsiteDetailsQuery.name}`, getWebsiteDetailsQuery);
 
 export const useGetProjects = () =>
-  useQuery(`${getProjectsQuery.name}`, getProjectsQuery);
+  useQuery(`${getProjectsQuery.name}`, () => getProjectsQuery(null));
 
 export const useGetProjectsImages = (id) =>
   useQuery(`${getProjectsImagesQuery.name + id}`, () =>
     getProjectsImagesQuery(id)
   );
+
+export const useGetProjectsWithId = (id) =>
+  useQuery(`${getProjectsQuery.name + id}`, () => getProjectsQuery(id));

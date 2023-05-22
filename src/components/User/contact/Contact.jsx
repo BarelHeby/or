@@ -6,9 +6,13 @@ import ContactForm from "./ContactForm";
 function Contact() {
   return (
     <Container>
-      <h1 className="text-center mb-3 ">צור איתנו קשר</h1>
-      <ContactRow />
-      <Row className="align-items-center me-2 ms-2">
+      <Row>
+        <h1 className="text-center mb-3 ">צור איתנו קשר</h1>
+      </Row>
+      <Row>
+        <ContactRow />
+      </Row>
+      <Row className="align-items-center me-2 ms-2 ">
         <Col className="me-2">
           <ContactForm />
         </Col>

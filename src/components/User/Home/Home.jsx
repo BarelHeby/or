@@ -1,7 +1,6 @@
 // import Carusel from "./Carusel/Carusel";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
-import Services from "../Phases/Phases";
 import Contact from "../contact/Contact";
 import FloatButton from "./FloatButton/FloatButton";
 import Recommendations from "../Recommendations/Recommendations";

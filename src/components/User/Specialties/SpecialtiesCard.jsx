@@ -25,7 +25,7 @@ function SpecialtieCard({ header, text, icon }) {
       onMouseOut={default_colors}
     >
       <Row className="g-0 align-items-center">
-        <Col xs={4} lg={3} xxl={2} className="ps-1 pt-1  ms-auto ">
+        <Col xs={4} lg={3} xxl={2} className="ps-1 pt-1  ms-auto me-2">
           <Button
             className="btn rounded-start bg-transparent btn-lg border-0 costume-curser "
             ref={number}
